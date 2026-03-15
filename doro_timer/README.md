@@ -44,9 +44,9 @@ Options:
 > Instead of using `doro_tx`, one can also connect to UNIX socket, present at : `/tmp/doro_timer.sock` (only available when `doro_rx` is alive)
 > 
 > Example : 
->     ```bash
->     printf "<message>" | socat - UNIX-SENDTO:/tmp/doro_timer.sock
->     ```\
+> ```bash
+>   printf "<message>" | socat - UNIX-SENDTO:/tmp/doro_timer.sock
+> ```
 > _and ofcourse, replace `<message>` with one of the following :_
 > 
 > | Message | Action | 
