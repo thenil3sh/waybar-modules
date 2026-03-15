@@ -1,10 +1,8 @@
 # Pomodoro Timer
-
-<img srcset="../assets/basic.avif" width=46.6%>
-</img>
-<img srcset src="../assets/session_over.avif" width=50%>
-</img>
-
+<p>
+  <img srcset src="../assets/basic.avif" width=46.6% />
+  <img srcset src="../assets/session_over.avif" width=50% />
+</p>
 
 This crate provides two modules, 
 - `doro_tx` - Sends signal to `doro_rx`. It doesn't care, checking if signal made it safe.
