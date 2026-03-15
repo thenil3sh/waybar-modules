@@ -1,13 +1,9 @@
 # Pomodoro Timer
 
-<video controls>
-  <source src="../assets/basic.mp4" type="video/quicktime">
-  Your browser does not support the video tag.
-</video>
-<video controls>
-  <source src="../assets/session_over.mp4" type="video/quicktime">
-  Your browser does not support the video tag.
-</video>
+<img srcset="../assets/basic.avif" width=46.6%>
+</img>
+<img srcset src="../assets/session_over.avif" width=50%>
+</img>
 
 
 This crate provides two modules, 
