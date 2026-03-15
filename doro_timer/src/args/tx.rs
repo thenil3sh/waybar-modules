@@ -5,7 +5,7 @@ pub struct ClientArgs {
 }
 
 #[repr(u8)]
-#[derive(clap::Parser, Debug)]
+#[derive(clap::Subcommand, Debug)]
 pub enum Command {
     #[command(about = "Add minutes to timer (\x1b[1m1 minute\x1b[0m is added by default)")]
     Increase,

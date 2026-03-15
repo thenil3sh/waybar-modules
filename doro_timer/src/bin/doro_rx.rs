@@ -1,17 +1,17 @@
 use std::{
-    path::{Path, PathBuf}, sync::LazyLock, time::Duration
+    sync::LazyLock, time::Duration
 };
 
+
 use clap::Parser;
-use timer::{args::{ClientArgs, TimerArgs}, Timer};
+use doro_timer::{SOCKET_PATH, Timer, args::TimerArgs};
 use tokio::{
     fs, io,
     net::UnixDatagram,
-    signal::unix::{self, SignalKind, signal},
-    time::{self, Interval},
+    signal::unix::{SignalKind, signal},
+    time::{self},
 };
 
-static SOCKET_PATH: &str = "/tmp/bar_doro.sock";
 static ARGS : LazyLock<TimerArgs> = LazyLock::new(|| TimerArgs::parse());
 
 #[tokio::main(flavor = "current_thread")]
@@ -43,9 +43,3 @@ async fn main() -> io::Result<()> {
     }
 }
 
-async fn handle_hangup() {
-    let mut signal = signal(SignalKind::hangup()).unwrap();
-
-    signal.recv().await;
-    fs::remove_file(SOCKET_PATH).await.unwrap();
-}

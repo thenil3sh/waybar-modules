@@ -1,17 +1,13 @@
-use std::{
-    io::{Error, ErrorKind},
-    sync::LazyLock,
-};
+use std::sync::LazyLock;
 
 use clap::Parser;
-use timer::{SOCKET_PATH, args::ClientArgs};
+use doro_timer::{SOCKET_PATH, args::ClientArgs};
 use tokio::{io, net::UnixDatagram};
 
-static ARGS : LazyLock<ClientArgs> = LazyLock::new(|| ClientArgs::parse());
+static ARGS: LazyLock<ClientArgs> = LazyLock::new(|| ClientArgs::parse());
 
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> io::Result<()> {
-
     let socket = UnixDatagram::unbound()?;
 
     if let Err(x) = socket

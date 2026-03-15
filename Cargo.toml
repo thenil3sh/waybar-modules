@@ -1,10 +1,5 @@
-[package]
-name = "timer"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-clap = { version = "4.5.60", features = ["derive"] }
-clap_complete = "4.6.0"
-shell-words = "1.1.1"
-tokio = { version = "1.50.0", features = ["fs", "macros", "net", "rt", "signal", "sync", "time"] }
+[workspace]
+members = [
+    "doro_timer"
+]
+resolver = "1"
